@@ -1,0 +1,116 @@
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.navbar h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.navbar a {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar a:not(.create)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar a:not(.create):hover::after {
+  width: 80%;
+}
+
+.navbar a:hover {
+  color: var(--secondary-color);
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+.navbar .create {
+  background-color: var(--secondary-color);
+  color: white !important;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(231, 76, 60, 0.2);
+}
+
+.navbar .create:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* Séparateur entre la navbar et le contenu */
+.navbar-separator {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--light-gray), transparent);
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 768px) {
+  .navbar .container {
+    padding: 0 1rem;
+  }
+  
+  .navbar h1 {
+    font-size: 1.6rem;
+  }
+  
+  .navbar .links {
+    gap: 1.5rem;
+  }
+  
+  .navbar a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar .create {
+    padding: 0.5rem 1.2rem;
+  }
+}
